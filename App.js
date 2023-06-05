@@ -1,20 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import styles from "./styles";
+import Card from './components/Card';
+import Header from './components/Header';
+import Accordion from './components/Accordion';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!!</Text>
       <StatusBar style="auto" />
+
+      <Header></Header>
+      
+      <View style={styles.body}>
+        <Accordion></Accordion>
+      </View>
+
+      <View style={[styles.footer, styles.footShadow]}></View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

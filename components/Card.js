@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Animated, View } from "react-native";
 import styles from "../styles";
 
 export default function Card({ scale, zIndex, marginTop }) {
@@ -7,7 +7,7 @@ export default function Card({ scale, zIndex, marginTop }) {
     let cardHeight = 92 * scale;
 
     return(
-        <View 
+        <Animated.View 
             style={[
                 styles.card,
                 styles.cardShadow,
@@ -19,6 +19,6 @@ export default function Card({ scale, zIndex, marginTop }) {
                 }]
             }
         >
-        </View>
+        </Animated.View>
     )
 }

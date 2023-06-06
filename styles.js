@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     body: {
         flex: 7,
         alignItems: 'center',
-        justifyContent: 'center',
     },
 
     // footer
@@ -48,6 +47,16 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 1},
         shadowOpacity: 0.4,
         shadowRadius: 1,
+    },
+
+    // accordion
+    accordion: {
+        flex: 0,
+        width: '100%',
+        height: 'auto',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 30,
     },
   });
 

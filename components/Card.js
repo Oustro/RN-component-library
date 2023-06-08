@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Animated, View, useAnimatedValue } from "react-native";
+import { Animated } from "react-native";
 import styles from "../styles";
 
 export default function Card({ scale, zIndex, marginTop, open }) {

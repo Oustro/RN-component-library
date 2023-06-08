@@ -7,29 +7,17 @@ import Card from "./Card";
 export default function Accordion() {
     const [open, setOpen] = useState(false)
 
-    const scales = [1, 0.95, 0.88, 0.88]
+    const scales = [1, 0.95, 0.88, 0.81]
     const zIndexs = [3, 2, 1, 0]
-    const margins = [0, -80, -75, -85]
-
-    const [useScales, setUseScales] = useState(scales)
-    const [useZs, setUseZs] = useState(zIndexs)
-    const [useMargins, setUseMargins] = useState(margins)
+    const margins = [15, -80, -75, -80]
 
     let items = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6']
 
     const onPress = () => {
         if (!open) {
             setOpen(true)
-
-            setUseScales([1, 1, 1, 1])
-            setUseZs([0, 0, 0, 0])
-            setUseMargins([0, 30, 30, 30])
         } else {
             setOpen(false)
-
-            setUseScales(scales)
-            setUseZs(zIndexs)
-            setUseMargins(margins)
         }
     }
 
@@ -44,13 +32,14 @@ export default function Accordion() {
                     }
 
                     return <Card 
-                        scale={useScales[useIndex]}
-                        zIndex={useZs[useIndex]}
-                        marginTop={useMargins[useIndex]}
+                        scale={scales[useIndex]}
+                        zIndex={zIndexs[useIndex]}
+                        marginTop={margins[useIndex]}
+                        open={open}
                     >
                     </Card>
                 })}
             </View>
-        </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>    
     )
 }

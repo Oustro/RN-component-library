@@ -9,7 +9,7 @@ export default function Accordion() {
     const [first, setFirst] = useState(true)
 
     const scales = [1, 0.95, 0.88, 0.81]
-    const margins = [15, -80, -75, -77]
+    const margins = [15, -80, -75, -78]
 
     var scale = 0
     var marginTop = 0
@@ -38,12 +38,9 @@ export default function Accordion() {
                         if (index < 4) {
                             scale = scales[index]
                             marginTop = margins[index]
-                        } else if (index > 14) {
-                            scale = 0.95 - (0.07 * (14 - 1))
-                            marginTop = -92 * (0.95 - (0.07 * (14 - 1)))
                         } else if (index > 3) {
-                            scale = 0.95 - (0.07 * (index - 1))
-                            marginTop = -92 * (0.95 - (0.07 * (index - 1)))
+                            scale = 0.95 - (0.05 * (index - 1))
+                            marginTop = -92 * (0.95 - (0.05 * (index - 1)))
                         }
 
                         return <Card 

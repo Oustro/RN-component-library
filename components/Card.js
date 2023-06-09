@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Animated, Text, View } from "react-native";
+import { Animated, Text } from "react-native";
 import styles from "../styles";
 
-export default function Card({ scale, zIndex, marginTop, open, first, index, input }) {
+export default function Card({ scale, zIndex, marginTop, open, first, input }) {
     let cardWidth = 85;
     let cardHeight = 92;
 

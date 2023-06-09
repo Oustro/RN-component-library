@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     accordion: {
         flex: 0,
         width: '100%',
-        height: '35%',
+        height: 'auto',
         alignItems: 'center',
         paddingTop: 10,
     },

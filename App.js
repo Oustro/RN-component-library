@@ -22,16 +22,14 @@ export default function App() {
 
       <Header></Header>
       
-      <View style={{flex: 7}}>
-        <ScrollView 
-          contentContainerStyle={styles.body}
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
-          }
-        >
-          <Accordion></Accordion>
-        </ScrollView>
-      </View>
+      <ScrollView 
+        contentContainerStyle={styles.body}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+        }
+      >
+        <Accordion></Accordion>
+      </ScrollView>
 
       <View style={[styles.footer, styles.footShadow]}></View>
     </View>

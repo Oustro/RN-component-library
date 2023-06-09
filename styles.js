@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     // body
     body: {
-        flex: 7,
+        height: '69%',
         alignItems: 'center',
     },
 
@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     card: {
         borderRadius: 10,
         backgroundColor: '#EDEDED',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     cardShadow: {
         shadowColor: '#171717',
@@ -53,10 +55,9 @@ const styles = StyleSheet.create({
     accordion: {
         flex: 0,
         width: '100%',
-        height: 'auto',
+        height: '35%',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 30,
+        paddingTop: 10,
     },
   });
 

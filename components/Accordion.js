@@ -32,28 +32,28 @@ export default function Accordion() {
     }
 
     return(
-            <TouchableWithoutFeedback onPress={onPress}>
-                <View style={styles.accordion}>
-                    {items.map((item, index)=>{
-                        if (index < 4) {
-                            scale = scales[index]
-                            marginTop = margins[index]
-                        } else if (index > 3) {
-                            scale = 0.95 - (0.05 * (index - 1))
-                            marginTop = -92 * (0.95 - (0.05 * (index - 1)))
-                        }
+        <TouchableWithoutFeedback onPress={onPress}>
+            <View style={styles.accordion}>
+                {items.map((item, index)=>{
+                    if (index < 4) {
+                        scale = scales[index]
+                        marginTop = margins[index]
+                    } else if (index > 3) {
+                        scale = 0.95 - (0.05 * (index - 1))
+                        marginTop = -92 * (0.95 - (0.05 * (index - 1)))
+                    }
 
-                        return <Card 
-                            scale={scale}
-                            zIndex={1000 - index}
-                            marginTop={marginTop}
-                            open={open}
-                            first={first}
-                            input={item}
-                        >
-                        </Card>
-                    })}
-                </View>
-            </TouchableWithoutFeedback> 
+                    return <Card 
+                        scale={scale}
+                        zIndex={1000 - index}
+                        marginTop={marginTop}
+                        open={open}
+                        first={first}
+                        input={item}
+                    >
+                    </Card>
+                })}
+            </View>
+        </TouchableWithoutFeedback> 
     )
 }

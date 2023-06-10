@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     header: {
         flex: 1.2,
         backgroundColor: '#FACC15',
+        zIndex: 5000,
     },
     headShadow: {
         shadowColor: '#171717',
@@ -19,16 +20,11 @@ const styles = StyleSheet.create({
         shadowRadius: 3,
     },
 
-    // body
-    body: {
-        height: '69%',
-        alignItems: 'center',
-    },
-
     // footer
     footer: {
         flex: 1,
         backgroundColor: '#FACC15',
+        zIndex: 5000,
     },
     footShadow: {
         shadowColor: '#171717',
@@ -57,8 +53,26 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 'auto',
         alignItems: 'center',
-        paddingTop: 10,
     },
+    accordionText: {
+        fontSize: 20,
+        fontWeight: '500',
+        paddingVertical: 8,
+    },
+    accordionHeader: {
+        flexDirection: 'row',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-between', 
+        paddingHorizontal: '7.5%',
+        paddingTop: 12,
+    },
+    button: {
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+        backgroundColor: 'black',
+        borderRadius: 10,
+    }
   });
 
 export default styles;

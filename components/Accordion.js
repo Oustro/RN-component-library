@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from 'react';
-import { View, TouchableWithoutFeedback, Text, Pressable, Animated } from "react-native";
+import { View, TouchableWithoutFeedback, Text, Pressable, Animated, TouchableOpacity } from "react-native";
 import styles from "../styles";
 import Card from "./Card";
 
@@ -18,6 +18,8 @@ export default function Accordion() {
 
     let items = ['1', '2', '3', '4',
                  '5',]
+
+    // let items = []
 
     const expand = () => {
         if (first) {
@@ -60,37 +62,52 @@ export default function Accordion() {
  
                 <Animated.View style={{ opacity: animOpacity }}>
                     <Pressable 
-                        style={styles.button}
+                        style={styles.buttonBlack}
                         onPress={collapse}
                     >
-                        <Text style={{ color: 'white' }}>Show less</Text>
+                        <Text style={{ color: 'white', fontWeight: 'bold' }}>Show less</Text>
                     </Pressable>
                 </Animated.View>
             </View>
 
-            <TouchableWithoutFeedback onPress={expand}>
-                <View style={styles.accordion}>
-                    {items.map((item, index)=>{
-                        if (index < 4) {
-                            scale = scales[index]
-                            marginTop = margins[index]
-                        } else if (index > 3) {
-                            scale = 0.95 - (0.05 * (index - 1))
-                            marginTop = -92 * (0.95 - (0.05 * (index - 1)))
-                        }
+            {items.length != 0 
+                ?
+                    <TouchableWithoutFeedback onPress={expand}>
+                        <View style={styles.accordion}>
+                            {items.map((item, index)=>{
+                                if (index < 4) {
+                                    scale = scales[index]
+                                    marginTop = margins[index]
+                                } else if (index > 3) {
+                                    scale = 0.95 - (0.05 * (index - 1))
+                                    marginTop = -92 * (0.95 - (0.05 * (index - 1)))
+                                }
 
-                        return <Card 
-                            scale={scale}
-                            zIndex={1000 - index}
-                            marginTop={marginTop}
-                            open={open}
-                            first={first}
-                            input={item}
+                                return <Card 
+                                    scale={scale}
+                                    zIndex={1000 - index}
+                                    marginTop={marginTop}
+                                    open={open}
+                                    first={first}
+                                    input={item}
+                                >
+                                </Card>
+                            })}
+                        </View>
+                    </TouchableWithoutFeedback>
+                :
+                    <View style={styles.accordion}>
+
+                        <Text style={[styles.accordionSubText, { paddingTop: 8 }]}>No Birthdays Today.</Text>
+                        <Text style={[styles.accordionSubText, { paddingBottom: 8 }]}>Come Back Tomorrow!</Text>
+        
+                        <TouchableOpacity 
+                            style={styles.buttonPrimary}
                         >
-                        </Card>
-                    })}
-                </View>
-            </TouchableWithoutFeedback> 
+                            <Text style={{ color: 'black', fontWeight: 'bold' }}>Add Friends</Text>
+                        </TouchableOpacity>
+                    </View>
+            }
         </View>
     )
 }

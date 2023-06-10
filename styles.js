@@ -59,6 +59,10 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         paddingVertical: 8,
     },
+    accordionSubText: {
+        fontSize: 17,
+        fontWeight: '400',
+    },
     accordionHeader: {
         flexDirection: 'row',
         width: '100%',
@@ -67,11 +71,25 @@ const styles = StyleSheet.create({
         paddingHorizontal: '7.5%',
         paddingTop: 12,
     },
-    button: {
+    buttonBlack: {
         paddingHorizontal: 10,
         paddingVertical: 8,
         backgroundColor: 'black',
         borderRadius: 10,
+        shadowColor: '#171717',
+        shadowOffset: {width: 0, height: 1},
+        shadowOpacity: 0.4,
+        shadowRadius: 1,
+    },
+    buttonPrimary: {
+        paddingHorizontal: 10,
+        paddingVertical: 8,
+        backgroundColor: '#FACC15',
+        borderRadius: 10,
+        shadowColor: '#171717',
+        shadowOffset: {width: 0, height: 1},
+        shadowOpacity: 0.4,
+        shadowRadius: 1,
     }
   });
 

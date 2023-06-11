@@ -6,6 +6,7 @@ import styles from "./styles";
 import Header from './components/Header';
 import Accordion from './components/Accordion';
 import Footer from './components/Footer';
+import Carousel from './components/Carousel';
 
 export default function App() {
   const [refreshing, setRefreshing] = useState(false);
@@ -31,6 +32,8 @@ export default function App() {
         >
           <Accordion items={[1, 2, 3, 4, 5]}></Accordion>
           <Accordion items={[]}></Accordion>
+
+          <Carousel month={'January'}></Carousel>
 
           <View style={{ opacity: 0, height: 25 }}></View>
         </ScrollView>

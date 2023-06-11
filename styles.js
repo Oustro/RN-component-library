@@ -54,15 +54,6 @@ const styles = StyleSheet.create({
         height: 'auto',
         alignItems: 'center',
     },
-    accordionText: {
-        fontSize: 20,
-        fontWeight: '500',
-        paddingVertical: 8,
-    },
-    accordionSubText: {
-        fontSize: 17,
-        fontWeight: '400',
-    },
     accordionHeader: {
         flexDirection: 'row',
         width: '100%',
@@ -71,6 +62,19 @@ const styles = StyleSheet.create({
         paddingHorizontal: '7.5%',
         paddingTop: 12,
     },
+
+    // text
+    mainText: {
+        fontSize: 20,
+        fontWeight: '500',
+        paddingVertical: 8,
+    },
+    subtext: {
+        fontSize: 17,
+        fontWeight: '400',
+    },
+
+    // buttons
     buttonBlack: {
         paddingHorizontal: 10,
         paddingVertical: 8,
@@ -90,7 +94,17 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 1},
         shadowOpacity: 0.4,
         shadowRadius: 1,
-    }
+    },
+
+    // carousel
+    carouselHeader: {
+        flexDirection: 'row',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'flex-start', 
+        paddingHorizontal: '7.5%',
+        paddingTop: 12,
+    },
   });
 
 export default styles;

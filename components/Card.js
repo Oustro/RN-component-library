@@ -3,12 +3,12 @@ import { Animated, Text } from "react-native";
 import styles from "../styles";
 
 export default function Card({ scale, zIndex, marginTop, open, first, input }) {
-    let cardWidth = 85;
-    let cardHeight = 92;
+    const cardWidth = 85;
+    const cardHeight = 92;
 
-    var realWidth = new Animated.Value(85 * scale)
-    var realHeight = new Animated.Value(92 * scale)
-    var realMargin = new Animated.Value(marginTop)
+    const realWidth = new Animated.Value(85 * scale)
+    const realHeight = new Animated.Value(92 * scale)
+    const realMargin = new Animated.Value(marginTop)
 
     const inputRange = [85 * 0.81, 85]
     const outputRange = ["68.85%", "85%"]

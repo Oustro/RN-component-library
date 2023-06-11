@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useState } from 'react';
+import React, { useState, useRef } from "react";
 import { View, TouchableWithoutFeedback, Text, Pressable, Animated, TouchableOpacity } from "react-native";
 import styles from "../styles";
 import Card from "./Card";
@@ -58,7 +57,7 @@ export default function Accordion({ items }) {
     return(
         <View>
             <View style={styles.accordionHeader}>
-                <Text style={styles.accordionText}>Today</Text>
+                <Text style={styles.mainText}>Today</Text>
  
                 <Animated.View style={{ opacity: animOpacity }}>
                     <Pressable 
@@ -98,8 +97,8 @@ export default function Accordion({ items }) {
                 :
                     <View style={styles.accordion}>
 
-                        <Text style={[styles.accordionSubText, { paddingTop: 8 }]}>No Birthdays Today.</Text>
-                        <Text style={[styles.accordionSubText, { paddingBottom: 8 }]}>Come Back Tomorrow!</Text>
+                        <Text style={[styles.subtext, { paddingTop: 8 }]}>No Birthdays Today.</Text>
+                        <Text style={[styles.subtext, { paddingBottom: 8 }]}>Come Back Tomorrow!</Text>
         
                         <TouchableOpacity 
                             style={styles.buttonPrimary}

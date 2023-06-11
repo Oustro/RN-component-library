@@ -5,6 +5,7 @@ import { RefreshControl, ScrollView, Text, View } from 'react-native';
 import styles from "./styles";
 import Header from './components/Header';
 import Accordion from './components/Accordion';
+import Footer from './components/Footer';
 
 export default function App() {
   const [refreshing, setRefreshing] = useState(false);
@@ -28,13 +29,14 @@ export default function App() {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
           }
         >
-          <Accordion></Accordion>
+          <Accordion items={[1, 2, 3, 4, 5]}></Accordion>
+          <Accordion items={[]}></Accordion>
 
           <View style={{ opacity: 0, height: 25 }}></View>
         </ScrollView>
       </View>
 
-      <View style={[styles.footer, styles.footShadow]}></View>
+      <Footer></Footer>
     </View>
   );
 }

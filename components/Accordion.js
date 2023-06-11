@@ -4,7 +4,7 @@ import { View, TouchableWithoutFeedback, Text, Pressable, Animated, TouchableOpa
 import styles from "../styles";
 import Card from "./Card";
 
-export default function Accordion() {
+export default function Accordion({ items }) {
     const [open, setOpen] = useState(false)
     const [first, setFirst] = useState(true)
 
@@ -16,8 +16,8 @@ export default function Accordion() {
 
     const animOpacity = useRef(new Animated.Value(0)).current
 
-    let items = ['1', '2', '3', '4',
-                 '5',]
+    // let items = ['1', '2', '3', '4',
+    //              '5',]
 
     // let items = []
 

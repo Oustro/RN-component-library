@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
-import { View, Text, Animated, TouchableWithoutFeedback } from "react-native";
+import { View, Text, Animated, TouchableWithoutFeedback, TouchableOpacity } from "react-native";
 import styles from "../styles";
 import { AntDesign } from '@expo/vector-icons';
+import Card from "./Card";
 
 export default function Carousel({ month }) {
     const [open, setOpen] = useState(false)
+    const [first, setFirst] = useState(true)
 
     const angle = useRef(new Animated.Value(0)).current
 
@@ -15,6 +17,10 @@ export default function Carousel({ month }) {
     const angleStyle = { transform: [{ rotate: animAngle }]}
 
     const expand = () => {
+        if (first) {
+            setFirst(false)
+        }
+        
         if (!open) {
             setOpen(true)
 
@@ -22,7 +28,7 @@ export default function Carousel({ month }) {
                 angle,
                 {
                     toValue: 1,
-                    duration: 350,
+                    duration: 250,
                     useNativeDriver: false
                 }
             ).start()
@@ -33,7 +39,7 @@ export default function Carousel({ month }) {
                 angle,
                 {
                     toValue: 0,
-                    duration: 350,
+                    duration: 250,
                     useNativeDriver: false
                 }
             ).start()
@@ -56,6 +62,18 @@ export default function Carousel({ month }) {
                 </View>
             </TouchableWithoutFeedback>
             
+            <View style={styles.carousel}>
+                <Card
+                    width={35}
+                    height={92}
+                    scale={1}
+                    zIndex={0}
+                    hiddenMargin={-100}
+                    marginTop={5}
+                    open={open}
+                    first={first}
+                />
+            </View>
         </View>
     )
 }

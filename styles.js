@@ -105,6 +105,14 @@ const styles = StyleSheet.create({
         paddingHorizontal: '7.5%',
         paddingTop: 12,
     },
+    carousel: {
+        flex: 0,
+        width: '100%',
+        height: 'auto',
+        paddingBottom: 5,
+        alignItems: 'center',
+        overflow: 'hidden',
+    },
   });
 
 export default styles;

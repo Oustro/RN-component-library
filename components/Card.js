@@ -2,31 +2,28 @@ import React, { useEffect } from "react";
 import { Animated, Text } from "react-native";
 import styles from "../styles";
 
-export default function Card({ scale, zIndex, marginTop, open, first, input }) {
-    const cardWidth = 85;
-    const cardHeight = 92;
+export default function Card({ width, height, scale, zIndex, hiddenMargin, marginTop, open, first, input }) {
+    const realWidth = new Animated.Value(width * scale)
+    const realHeight = new Animated.Value(height * scale)
+    const realMargin = new Animated.Value(hiddenMargin)
 
-    const realWidth = new Animated.Value(85 * scale)
-    const realHeight = new Animated.Value(92 * scale)
-    const realMargin = new Animated.Value(marginTop)
-
-    const inputRange = [85 * 0.81, 85]
-    const outputRange = ["68.85%", "85%"]
+    const inputRange = [0, 100]
+    const outputRange = ["0%", "100%"]
 
     const animWidth = realWidth.interpolate({inputRange, outputRange})
 
     useEffect(() => {
         if (!first) {
             if (!open) {
-                realWidth.setValue(cardWidth)
-                realHeight.setValue(cardHeight)
-                realMargin.setValue(15)
+                realWidth.setValue(width)
+                realHeight.setValue(height)
+                realMargin.setValue(marginTop)
     
                 Animated.parallel([
                     Animated.timing(
                         realWidth,
                         {
-                            toValue: 85 * scale,
+                            toValue: width * scale,
                             duration: 450,
                             useNativeDriver: false
                         }
@@ -34,7 +31,7 @@ export default function Card({ scale, zIndex, marginTop, open, first, input }) {
                     Animated.timing(
                         realHeight,
                         {
-                            toValue: 92 * scale,
+                            toValue: height * scale,
                             duration: 450,
                             useNativeDriver: false
                         }
@@ -42,7 +39,7 @@ export default function Card({ scale, zIndex, marginTop, open, first, input }) {
                     Animated.timing(
                         realMargin,
                         {
-                            toValue: marginTop,
+                            toValue: hiddenMargin,
                             duration: 350,
                             useNativeDriver: false
                         }
@@ -53,7 +50,7 @@ export default function Card({ scale, zIndex, marginTop, open, first, input }) {
                     Animated.timing(
                         realWidth,
                         {
-                            toValue: cardWidth,
+                            toValue: width,
                             duration: 450,
                             useNativeDriver: false
                         }
@@ -61,7 +58,7 @@ export default function Card({ scale, zIndex, marginTop, open, first, input }) {
                     Animated.timing(
                         realHeight,
                         {
-                            toValue: cardHeight,
+                            toValue: height,
                             duration: 450,
                             useNativeDriver: false
                         }
@@ -69,7 +66,7 @@ export default function Card({ scale, zIndex, marginTop, open, first, input }) {
                     Animated.timing(
                         realMargin,
                         {
-                            toValue: 15,
+                            toValue: marginTop,
                             duration: 350,
                             useNativeDriver: false
                         }

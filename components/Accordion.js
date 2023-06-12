@@ -73,7 +73,7 @@ export default function Accordion({ items }) {
                 ?
                     <TouchableWithoutFeedback onPress={expand}>
                         <View style={styles.accordion}>
-                            {items.map((item, index)=>{
+                            {items.map((item, index) => {
                                 if (index < 4) {
                                     scale = scales[index]
                                     hiddenMargin = margins[index]
@@ -82,17 +82,19 @@ export default function Accordion({ items }) {
                                     hiddenMargin = -92 * (0.95 - (0.05 * (index - 1)))
                                 }
 
-                                return <Card 
-                                    width={85}
-                                    height={92}
-                                    scale={scale}
-                                    zIndex={1000 - index}
-                                    hiddenMargin={hiddenMargin}
-                                    marginTop={15}
-                                    open={open}
-                                    first={first}
-                                    input={item}
-                                />
+                                return (
+                                    <Card 
+                                        width={85}
+                                        height={92}
+                                        scale={scale}
+                                        zIndex={1000 - index}
+                                        hiddenMargin={hiddenMargin}
+                                        marginTop={15}
+                                        open={open}
+                                        first={first}
+                                        input={item}
+                                    />
+                                )
                             })}
                         </View>
                     </TouchableWithoutFeedback>

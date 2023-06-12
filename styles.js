@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 'auto',
         alignItems: 'center',
+        paddingBottom: 10,
     },
     accordionHeader: {
         flexDirection: 'row',
@@ -103,15 +104,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start', 
         paddingHorizontal: '7.5%',
-        paddingTop: 12,
     },
     carousel: {
         flex: 0,
-        width: '100%',
+        width: '85%',
         height: 'auto',
-        paddingBottom: 5,
-        alignItems: 'center',
         overflow: 'hidden',
+        borderRadius: 10,
+    },
+    carouselContent: {
+        flexDirection: "row",
+        gap: 15,
+        paddingBottom: 5,
+        marginTop: -60.5,
+    },
+    carouselButtons: {
+        flexDirection: "row", 
+        justifyContent: "space-between",
+        zIndex: 1,
     },
   });
 

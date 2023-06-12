@@ -22,7 +22,7 @@ export default function Carousel({ month, items }) {
     const cardWidth = (windowDimensions.width * 0.85 * 0.50)
     const startTranslate = ((windowDimensions.width * 0.85 * 0.40) / 2) + 15
     const animTranslate = useRef(new Animated.Value(startTranslate)).current
-    const [position, setPosition] = useState(0)
+    var position = 0
 
     const expand = () => {
         if (first) {
@@ -75,7 +75,7 @@ export default function Carousel({ month, items }) {
 
     const left = () => {
         if (position != 0) {
-            setPosition(position - 1)
+            --position
 
             Animated.timing(
                 animTranslate,
@@ -102,7 +102,7 @@ export default function Carousel({ month, items }) {
                 }
             ).start()
 
-            setPosition(position + 1)
+            ++position
         }
 
         console.log('RIGHT')

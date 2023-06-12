@@ -31,7 +31,8 @@ export default function App() {
           }
         >
           <Accordion items={[1, 2, 3, 4, 5]}/>
-          <Accordion items={[]}/>
+
+          <View style={{ opacity: 0, height: 25 }}></View>
 
           <Carousel month={'January'} items={[1, 2, 3, 4, 5]}/>
           <Carousel month={'February'} items={[1, 2, 3]}/>

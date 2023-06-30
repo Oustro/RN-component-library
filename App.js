@@ -1,20 +1,48 @@
+import React from 'react';
+import { useState, useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { RefreshControl, ScrollView, Text, View } from 'react-native';
+import styles from "./styles";
+import Header from './components/Header';
+import Accordion from './components/Accordion';
+import Footer from './components/Footer';
+import Carousel from './components/Carousel';
 
 export default function App() {
+  const [refreshing, setRefreshing] = useState(false);
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!!</Text>
       <StatusBar style="auto" />
+
+      <Header></Header>
+      
+      <View style={{ flex: 8 }}>
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+          }
+        >
+          <Accordion items={[1, 2, 3, 4, 5]}/>
+
+          <View style={{ opacity: 0, height: 25 }}></View>
+
+          <Carousel month={'January'} items={[1, 2, 3, 4, 5]}/>
+          <Carousel month={'February'} items={[1, 2, 3]}/>
+          <Carousel month={'March'} items={[1, 2]}/>
+
+          <View style={{ opacity: 0, height: 25 }}></View>
+        </ScrollView>
+      </View>
+
+      <Footer></Footer>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
